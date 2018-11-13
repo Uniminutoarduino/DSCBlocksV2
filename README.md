@@ -10,7 +10,7 @@ Correspondence: jalvarez@uniminuto.edu
 Research Gate: https://www.researchgate.net/profile/Jonathan_Alvarez_Ariza
 
 Description: 
-* DSCBlocks is an application to program DsPICs series 33FJXXXX from Microchip Inc through Visual Algorithms (Google Blockly). The application compiles and generate the code for the DSC.
+* DSCBlocks is an application to program DsPICs series 33FJXXXGP/MCXXX from Microchip Inc through Visual Algorithms (Google Blockly). The application compiles and generate the code for the DSC.
 The application was tested in JDK version 1.8 and developed in JavaFX.
 
 ## Java Classes explanation:
