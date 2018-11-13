@@ -573,6 +573,7 @@ public class GUIController implements Initializable {
          lineacomando.appendText("Compiling...\n");
          progreso.setProgress(0);
          indicador.setProgress(0);
+         //Compile main.c***************************************************************************************************************************
          //lineacomando.appendText(Path.Compiler+"/bin/xc16-gcc.exe  "+Path.Project+"/main.c"+" -o "+Path.Project+"/main.o -c -mcpu="+Boards[ProjectWizardController.BoardType]+" -I "+Path.Project+"Documents/UNIMINUTO/2018-I/Robot Social/osa\" -I "+Path.Project+"Documents/UNIMINUTO/2018-I/Robot Social/osa/OSA Files\\n");
          //process = runTime.exec("C:/Program Files (x86)/Microchip/xc16/v1.21/bin/xc16-gcc.exe  C:/Users/Jonathan/Documents/Temporales/Compilacion/main.c -o C:/Users/Jonathan/Documents/Temporales/Compilacion/main.o -c -mcpu=33FJ128MC802"); //Comando 1.
         //String ruta="C:/Program Files (x86)/Microchip/xc16/v1.21/bin/xc16-gcc.exe  C:/Users/Jonathan/Documents/Temporales/Compilacion/main.c -o C:/Users/Jonathan/Documents/Temporales/Compilacion/main.o -c -mcpu=33FJ128MC802";
@@ -580,23 +581,23 @@ public class GUIController implements Initializable {
          //La forma correcta es la siguiente se deben agregar comillas a la ruta esto para ejecutar rutas que contengan espacios...
          //"C:\Program Files (x86)\Microchip\xc16\v1.30\bin\xc16-gcc.exe"   "../../Documents/UNIMINUTO/2018-I/Robot Social/Robot Social/osa.c"  -o build/default/production/_ext/1659002919/osa.o  -c -mcpu=33FJ128GP804  -MMD -MF "build/default/production/_ext/1659002919/osa.o.d"        -g -omf=elf -DXPRJ_default=default  -legacy-libc    -I"../../Documents/UNIMINUTO/2018-I/Robot Social/osa" -I"../../Documents/UNIMINUTO/2018-I/Robot Social/osa/OSA Files" -O0 -msmart-io=1 -Wall -msfr-warn=off  
          Comando=executeCommand(ruta);
-         //compilar osa.c***************************************************************************************************************************
+         //compile osa.c***************************************************************************************************************************
         //osa.c es el archivo para compilar el RTOS (osa) para dsPIC. 
         //"C:\Program Files (x86)\Microchip\xc16\v1.30\bin\xc16-gcc.exe"   "../../Documents/UNIMINUTO/2018-I/Robot Social/Robot Social/osa.c"  -o build/default/production/_ext/1659002919/osa.o  -c -mcpu=33FJ128GP804  -MMD -MF "build/default/production/_ext/1659002919/osa.o.d"        -g -omf=elf -DXPRJ_default=default  -legacy-libc    -I"../../Documents/UNIMINUTO/2018-I/Robot Social/osa" -I"../../Documents/UNIMINUTO/2018-I/Robot Social/osa/OSA Files" -O0 -msmart-io=1 -Wall -msfr-warn=off  
          ruta=Path.Compiler+"/bin/xc16-gcc.exe"+"  \""+Path.Project+"\"/osa/osa.c"+" -o \""+Path.Project+"\"/osa.o -c -mcpu="+Boards[ProjectWizardController.BoardType]+" -MMD -MF \""+Path.Project+"\"/osa.o.d  -g -omf=elf  -I \""+Path.Project+"\"/osa -I \""+Path.Project+"\"/osa/OSAFiles  -O0 -msmart-io=1 -Wall -msfr-warn=off"; //mcpu es la cpu o core.
          Comando=executeCommand(ruta);
-        //Compilar user.c**************************************************************************************************************************
+        //Compile user.c**************************************************************************************************************************
          lineacomando.appendText(Path.Compiler+"/bin/xc16-gcc.exe  "+Path.Project+"/user.c"+" -o "+Path.Project+"/user.o -c -mcpu="+Boards[ProjectWizardController.BoardType]+"\n");
          ruta=Path.Compiler+"/bin/xc16-gcc.exe  \""+Path.Project+"\"/user.c"+" -o \""+Path.Project+"\"/user.o -c -mcpu="+Boards[ProjectWizardController.BoardType]+"";
          //lineacomando.appendText(ruta);
          Comando=executeCommand(ruta);
-        //Compilar control.c (Rutinas de control)**************************************************************************************************
+        //Compile control.c (Rutinas de control)**************************************************************************************************
          lineacomando.appendText(Path.Compiler+"/bin/xc16-gcc.exe  "+Path.Project+"/control.c"+" -o "+Path.Project+"/control.o -c -mcpu="+Boards[ProjectWizardController.BoardType]+"\n");
          ruta=Path.Compiler+"/bin/xc16-gcc.exe"+"  \""+Path.Project+"\"/control.c"+" -o \""+Path.Project+"\"/control.o -c -mcpu="+Boards[ProjectWizardController.BoardType]+"";
          progreso.setProgress(0.333);
          indicador.setProgress(0.3333);
          Comando=executeCommand(ruta);
-         //Generar archivo .elf retornar ocupacion memoria dsPIC 33FJ128GP804***********************************************************************
+         //Generate .elf file to return the memory distribution of the dsPIC 33FJ128GP804***********************************************************************
          lineacomando.appendText(Path.Compiler+"/bin/xc16-gcc.exe -o "+Path.Project+"/archivoelf.elf  "+Path.Project+"/main.o  "+Path.Project+"/osa.o  "+Path.Project+"/user.o  "+Path.Project+"/control.o    -mcpu="+Boards[ProjectWizardController.BoardType]+" -I \""+Path.Project+"\"/osa -I \""+Path.Project+"\"/osa/OSAFiles -omf=elf -Wl,--defsym=__MPLAB_BUILD=1,,--script=p"+Boards[ProjectWizardController.BoardType]+".gld,--stack=16,--report-mem\n");
          ruta=Path.Compiler+"/bin/xc16-gcc.exe -o \""+Path.Project+"\"/archivoelf.elf  \""+Path.Project+"\"/main.o \""+Path.Project+"\"/osa.o \""+Path.Project+"\"/user.o \""+Path.Project+"\"/control.o -mcpu="+Boards[ProjectWizardController.BoardType]+" -omf=elf -I \""+Path.Project+"\"/osa -I \""+Path.Project+"\"/osa/OSAFiles -Wl,--defsym=__MPLAB_BUILD=1,,--script=p"+Boards[ProjectWizardController.BoardType]+".gld,--stack=16,--report-mem";
          Comando=executeCommand(ruta);
@@ -606,7 +607,7 @@ public class GUIController implements Initializable {
          Comando=executeCommand(ruta);
          progreso.setProgress(0.666);
          indicador.setProgress(0.666);
-         //Conectar con el bootloader,enviar comando de reset**************************************************************************************
+         //Conects with the bootloader,Send a reset command**************************************************************************************
          lineacomando.appendText("Compilation done...\n");
          lineacomando.appendText("Connecting with bootloader...\n");
          String ConsoleCommand="src/ds30LoaderConsole.exe -f=\""+Path.Project+"\"/archivoelf.hex -d=dsPIC"+Boards[ProjectWizardController.BoardType]+" -k="+ProjectWizardController.PortNameSel+" -r=57600 --customplacement=1 --writef --non-interactive --customsize=1 --no-goto-bl --ht=3000 --polltime=200 --timeout=5000 --resettime=1000 -q=6 --reset-baudrate=57600";//En este caso 
