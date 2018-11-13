@@ -50,11 +50,10 @@ public Label RefVal;
      */
     static SerialPort serialPort;//Serial Port event
     int contadorvariables=0; //Conteo de variables de acuerdo a lo definido por el usuario
-    StringBuilder message = new StringBuilder();//String builder procesa los datos de mejor forma que 
-    //string
-    StringBuilder messageB = new StringBuilder();//MessageB asigna el valor nuevo del string de entrada
+    StringBuilder message = new StringBuilder();
+    StringBuilder messageB = new StringBuilder();//MessageB gets the data incoming the serial port
     //esto se hace porque se recibe basura del UART y se deben validad los datos...
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb) {//Method to inizialize the SerialPort.
         // TODO
         Play.setGraphic(new ImageView(new Image("/Images/play.png")));
         Stop.setGraphic(new ImageView(new Image("/Images/stop.png")));
@@ -63,8 +62,8 @@ public Label RefVal;
         Play.setText("");
         Stop.setText("");
     
-        serialPort = new SerialPort(ProjectWizardController.PortNameSel);//Seleccion de puerto establecido.
-        Play.setOnAction(new EventHandler<ActionEvent>() {//Forma de generar la accion sobre el menu item
+        serialPort = new SerialPort(ProjectWizardController.PortNameSel);//Selects the serial port (COMx) of the User.
+        Play.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
              
                 try {
@@ -94,11 +93,11 @@ public Label RefVal;
                     }
                     
                         });
-         Stop.setOnAction(new EventHandler<ActionEvent>() {//Forma de generar la accion sobre el menu item
+         Stop.setOnAction(new EventHandler<ActionEvent>() {//Event for the STOp button. It stops the data sampling of the serial port.
             @Override public void handle(ActionEvent e) {
             
                 try {
-                    if(serialPort.isOpened()){
+                    if(serialPort.isOpened()){//Check if port is opened
                     serialPort.removeEventListener();
                     serialPort.closePort();//Close PORT
                     }
@@ -148,17 +147,16 @@ public Label RefVal;
     
   
     
-    class SerialPortReader implements SerialPortEventListener { //Clase para la lectura de puerto serial
-   
+    class SerialPortReader implements SerialPortEventListener { //Class for the event Serial port
         public void serialEvent(SerialPortEvent event) {//Event handler...for SerialPORT.
     if(event.isRXCHAR() && event.getEventValue() > 0){
         try {
             byte buffer[] = serialPort.readBytes();//ReadBytes.
             for (byte b: buffer) {
-                    if (b == '\n') {//Si existe un salto de linea se ha recibido una variable
+                    if (b == '\n') {//If there exists a linebreak a new variable is received.
                        contadorvariables++; //
-                        if(contadorvariables>=Integer.parseInt(GUIController.Varplotter)){//Si el numero de variables contadas de acuerdo al
-                            //salto de linea es igual a las indicadas ejecutar la actualizacion del archivo
+                        if(contadorvariables>=Integer.parseInt(GUIController.Varplotter)){//If linebreak correspond to the number of variables
+                         //indicated by the user, then...
                             
                     //    Platform.runLater(new Runnable() {//Para ejecutar una tarea simple o compleja
                             //se instancia a Platform. runnable.
@@ -171,13 +169,13 @@ public Label RefVal;
                                     
                                     
                                 //    try{
-                                    int Contadorvalorescorrectos=0;//Este contador permite contar si un objeto es numerico o tiene error.
+                                    int Contadorvalorescorrectos=0;//Checks if the data are correct
                                     String[] array = message.toString().split(";", -1);
-                                    float[] datos=new float[Integer.parseInt(GUIController.Varplotter)];//Array de tres datos flotantes...
+                                    float[] datos=new float[Integer.parseInt(GUIController.Varplotter)];
                                     for(int valarr=0;valarr<array.length;valarr++){
                                         try{
                                         double num=Double.parseDouble(array[valarr]);
-                                        datos[valarr]=Float.valueOf(array[valarr]);//Asigna datos para ser enviados...
+                                        datos[valarr]=Float.valueOf(array[valarr]);
                                         Contadorvalorescorrectos++;
                                         }catch (NumberFormatException nfe){
                                             
@@ -190,11 +188,9 @@ public Label RefVal;
                                     //double num=Double.parseDouble(Cvariable);//Convertir el numero para saber si es o no un numero de lo contrario 
                                    // if(listdatos.size()==Integer.parseInt(GUIController.Varplotter)){//Si se agregaron los datos en forma correcta
                                         //agregar para plotter.
-                                    message.append("\r\n"); //Append salto de linea y retorno de carro
+                                    message.append("\r\n"); //Append message
                                     if(Contadorvalorescorrectos==Integer.parseInt(GUIController.Varplotter)){
-                                    //Escribir datos sobre el 
-                                    //archivo establecido., no reemplazar los existentes.
-                                    Arrays.sort(datos);//Organizar el array de datos para ser enviado...
+                                    Arrays.sort(datos);
                                     String valueC="";
                                      for(int valarr=0;valarr<Integer.parseInt(GUIController.Varplotter);valarr++){
                                          valueC+=String.valueOf(datos[valarr]);
@@ -203,12 +199,8 @@ public Label RefVal;
                                          }
                                       }
                                     System.out.println(valueC);
-                                    writer.append(valueC); //Escribir los datos en el archivo especificado.
+                                    writer.append(valueC); //Write data incoming of the serial port in the .CSV file.
                                     writer.flush();
-                                   // message.setLength(0);//Reiniciar el string que contiene todos los datos.
-                                    //System.out.println(message);
-                                   // }
-                                    //Contadorvalorescorrectos=0;
                                     }
                                     //listdatos.clear();
                                     Contadorvalorescorrectos=0;
@@ -225,13 +217,9 @@ public Label RefVal;
                                     String Cvariable;
                                     Cvariable=message.toString();
                                     double num=Double.parseDouble(Cvariable);//Convertir el numero para saber si es o no un numero de lo contrario  
-                                     message.append("\r\n"); //Append salto de linea y retorno de carro 
-                                    //Escribir datos sobre el 
-                                    //archivo establecido., no reemplazar los existentes.
-                                    writer.append(message); //Escribir los datos en el archivo especificado.
+                                     message.append("\r\n"); //LineBreak for each data line.
+                                    writer.append(message); //Write data incoming of the serial port in the .CSV file.
                                     writer.flush();
-                                   // message.setLength(0);//Reiniciar el string que contiene todos los datos.
-                                    //System.out.println(message);
                                   }catch(NumberFormatException nfe){
                                       
                                   } catch (IOException ex) {
@@ -241,12 +229,10 @@ public Label RefVal;
                                 
                          //  }
                        // });
-                        message.setLength(0);//Reiniciar el string que contiene todos los datos.
-                        //messageB.setLength(0);//Reiniciar el string que contiene todos los datos.
+                        message.setLength(0);//Restart the string that contains all data for new sampling.
                         }else{
-                        if(contadorvariables<=(Integer.parseInt(GUIController.Varplotter)-1)){//Colocar : solo
-                            //hasta la penultima variable...
-                        message.append(";"); //Append ; al vector especificado. 
+                        if(contadorvariables<=(Integer.parseInt(GUIController.Varplotter)-1)){
+                        message.append(";"); //Append ;. The columns of the CSV file is delimited by this character.
                         }
                         }
                         
