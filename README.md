@@ -6,12 +6,12 @@ Github for project DSCBlocks V2 (Open Source)
 Developer: Jonathan Álvarez Ariza
 Correspondence: jalvarez@uniminuto.edu
 Research Gate: https://www.researchgate.net/profile/Jonathan_Alvarez_Ariza
-------------------------------------------------------------------------------------------------------------------------------------------
-Description: DSCBlocks is an application to program DsPICs series 33FJXXXX through Visual Blocks from Microchip Inc. The application compiles 
+
+Description: 
+DSCBlocks is an application to program DsPICs series 33FJXXXX through Visual Blocks from Microchip Inc. The application compiles 
 In order to open the application, click in ControllyV2.jar
 The application was tested in JDK version 1.8. The application was developed in JavaFX.
 
-------------------------------------------------------------------------------------------------------------------------------------------
 Java Classes explanation:
 
 -GUIController: Main class of the aplication, opens the different complements as Project Wizard, Plotter, Serial Visualizer, Save and Load.
@@ -24,7 +24,7 @@ Java Classes explanation:
 -SerialPortVisual: Opens the serial port Visualizer. 
 
 Each class contains the respective fxml file (scene file) of JavaFX.
---------------------------------------------------------------------------------------------------------------------------------------------
+
 Other files:
 
 session.lgdfs
@@ -32,7 +32,6 @@ session.lgdss
 session.lggs
 
 Do not remove this files. These files contains the header elements for the plotter LiveGraph!
--------------------------------------------------------------------------------------------------------------------------------------------
 
 -The main web page for the application is located in the folder \src\controllyv2\BlocklyOPt\demos\code\index.html
 -Generator for XC16 compiler for the DSCs is located at src\controllyv2\BlocklyOPt\generators\dart\base2.js
