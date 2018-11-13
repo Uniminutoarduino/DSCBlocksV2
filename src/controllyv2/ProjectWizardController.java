@@ -62,7 +62,7 @@ public class ProjectWizardController implements Initializable {//This scene open
 
     public ListView PortView; //Listiview for the COM ports Available
     public String[] portNames;//String with the COM ports Available
-    public static String PortNameSel; //Puerto seleccionado
+    public static String PortNameSel; //Selected COMx port
     @FXML
     TextField Rutac;
     /**
