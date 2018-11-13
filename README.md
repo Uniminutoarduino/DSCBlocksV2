@@ -19,7 +19,7 @@ The application was tested in JDK version 1.8 and developed in JavaFX.
 
 ## Instalation
 
-Just create a netbeans project. Copies the content of the SRC folder inside your SRC folder in your project. Add the Java libraries LiveGraph (Plotter) and jssc (Serial Port) provided in the full .zip file of the APP available at
+Just create a Netbeans IDE project. Copies the content of the SRC folder inside in the classpath of your project. Add the Java libraries LiveGraph (Plotter) and jssc (Serial Port) provided in the full .zip file of the APP available at
 
 ## Java Classes explanation:
 
