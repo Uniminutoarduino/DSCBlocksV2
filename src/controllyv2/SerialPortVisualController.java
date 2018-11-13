@@ -42,18 +42,18 @@ public class SerialPortVisualController implements Initializable {
     private Button serialcerrar;
     SerialPort serialPort;
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb) {//This class opens the Serial Visualizer.
         // TODO
         
-         eventoBotAbrir();//Evento boton abrir.
-         eventoBotCerrar();//evento boton cerrar.
+         eventoBotAbrir();//Event for the button open.
+         eventoBotCerrar();//Event for the button close.
        
     }
 
-    private void eventoBotAbrir() {//Eventos de botones
-          serialabrir.setOnAction(new EventHandler<ActionEvent>() {//Forma de generar la accion sobre el menu item
+    private void eventoBotAbrir() {//Event handler for the buttons open, close
+          serialabrir.setOnAction(new EventHandler<ActionEvent>() {//Open
            @Override public void handle(ActionEvent e) {
-             eventoAbrir();//Llamar a evento para programar target en este caso dsPIC 33FJ128GP804
+             eventoAbrir();
         
         }
 
@@ -62,9 +62,9 @@ public class SerialPortVisualController implements Initializable {
     }
 
     private void eventoBotCerrar() {
-            serialcerrar.setOnAction(new EventHandler<ActionEvent>() {//Forma de generar la accion sobre el menu item
+            serialcerrar.setOnAction(new EventHandler<ActionEvent>() {//Close
            @Override public void handle(ActionEvent e) {
-             eventoCerrar();//Llamar a evento para programar target en este caso dsPIC 33FJ128GP804
+             eventoCerrar();
         
         }
 
@@ -72,7 +72,7 @@ public class SerialPortVisualController implements Initializable {
          });
     }
     
-    public void eventoAbrir() {//evento para abrir puerto serial
+    public void eventoAbrir() {//Method to open SerialPort
                   serialPort = new SerialPort(ProjectWizardController.PortNameSel);//Seleccion de puerto establecido.
         if(serialPort.isOpened()){
             
@@ -104,7 +104,7 @@ public class SerialPortVisualController implements Initializable {
 
     
     
-    private void eventoCerrar() {//Evento para cerrar puerto serial.
+    private void eventoCerrar() {//Method to close serial port
                      if(serialPort.isOpened()){//Si puerto serial esta abierto.
                          try {
                              serialPort.removeEventListener();
@@ -120,7 +120,7 @@ public class SerialPortVisualController implements Initializable {
                     }
                 }
 
-class SerialPortReader implements SerialPortEventListener { //Clase para la lectura de puerto serial
+class SerialPortReader implements SerialPortEventListener { //Class to adds a listener for data incoming.
    
    @Override
    public void serialEvent(SerialPortEvent event) {//Event handler...for SerialPORT.
@@ -132,7 +132,7 @@ class SerialPortReader implements SerialPortEventListener { //Clase para la lect
         
         byte buffer[] = serialPort.readBytes();//ReadBytes.
         final String readed = new String(buffer);
-        serialarea.appendText(readed);//Enviar texto recibido a textarea.
+        serialarea.appendText(readed);//Send bytes to the Text are for the Serial Visualizer
         } catch (SerialPortException ex) {
             Logger.getLogger(SerialPortVisualController.class.getName()).log(Level.SEVERE, null, ex);
         }
