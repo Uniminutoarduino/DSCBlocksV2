@@ -15,8 +15,8 @@ The application was tested in JDK version 1.8 and developed in JavaFX.
 
 ## Java Classes explanation:
 
-* GUIController: Main class of the aplication, opens the different complements as Project Wizard, Plotter, Serial Visualizer, Save and Load.
-* Filereaderwriter: Copies the different folders and files needed to the aplication inside the user's folder. 
+* GUIController: Main class of the application, opens the different complements as Project Wizard, Plotter, Serial Visualizer, Save and Load.
+* Filereaderwriter: Copies the different folders and files needed in the aplication inside the user's folder. 
 * Path: Save the paths for the compiler and user folder.
 * Help: Opens the help for the application in the local browser.
 * PlayConsole: Opens the plotter and asks the number of variables to plot. This class adjust the elements employed for the class LivePlot.
