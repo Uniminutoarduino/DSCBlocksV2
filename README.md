@@ -36,17 +36,17 @@ session.lggs
 
 Do not remove this files. These files contains the header elements for the plotter LiveGraph!
 
-**The main web page for the application is located in the folder \src\controllyv2\BlocklyOPt\demos\code\index.html
+** The main web page for the application is located in the folder \src\controllyv2\BlocklyOPt\demos\code\index.html
 
-**Generator for XC16 compiler for the DSCs is located at src\controllyv2\BlocklyOPt\generators\dart\base2.js
+** Generator for XC16 compiler for the DSCs is located at src\controllyv2\BlocklyOPt\generators\dart\base2.js
 
-**Blocks (graphical appearance) for the peripherals for the DSC are located at src\controllyv2\BlocklyOPt\blocks\base2.js
+** Blocks (graphical appearance) for the peripherals for the DSC are located at src\controllyv2\BlocklyOPt\blocks\base2.js
 
-**Libraries for UART, Control and HardwareProfile (macros) for the development board are located in the folder libraries.
+** Libraries for UART, Control and HardwareProfile (macros) for the development board are located in the folder libraries.
 
-**RTOS (Real Time Operating System) (OSA) is located at the folder osa.
+** RTOS (Real Time Operating System) (OSA) is located at the folder osa.
 
-**ds30Console for the bootloader is located at the folder src (Do not remove!)
+** ds30Console for the bootloader is located at the folder src (Do not remove!)
 
 Any change in the code (generator or blocks) must be reconfigurated in Blockly. To do this, save the file and click the Python Scrip Build.py 
 (src\controllyv2\BlocklyOPt\build.py). 
