@@ -14,7 +14,7 @@ Description:
 
 For a quickly glance, see the web version of the app at http://www.seconlearning.com/DSCBlockV2/BlocklyOPt/demos/code/index.html
 
-The application compiles and generate the code for the DSC in the convention of the Microchip XC16 compiler.
+The application compiles and generates the code for the DSC in the convention of the Microchip XC16 compiler.
 The application was tested in JDK version 1.8 and developed in JavaFX.
 
 ## Instalation
