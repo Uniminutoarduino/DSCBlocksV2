@@ -45,64 +45,61 @@ import jssc.SerialPortList;
  *
  * @author Jonathan
  */
-public class ProjectWizardController implements Initializable {
+public class ProjectWizardController implements Initializable {//This scene opens the project Wizard.
    @FXML
-    public Button Projectlocation;//Boton de proyecto
+    public Button Projectlocation;//Button for the project
     @FXML
-    private Button Compilerlocation;//Boton de compilador.
+    private Button Compilerlocation;//Button for compilerLocation
     @FXML
-    private Button Aceptar;//Boton de compilador.
+    private Button Aceptar;//Button for OK
     @FXML
-    private Button Cancelar;//Boton de compilador.
+    private Button Cancelar;//Button forCancel
     @FXML
-    private CheckBox Board1;//CheckBox Board GP804.
+    private CheckBox Board1;//CheckBox Board dsPIC33FJ128GP804.
      @FXML
-    private CheckBox Board2;//CheckBox Board MC802.
+    private CheckBox Board2;//CheckBox Board dsPIC33FJ128MC802.
 
 
-    public ListView PortView; //Listiview para listar puertos disponibles.
-    public String[] portNames;//Lista con nombres de los puertos disponibles.
+    public ListView PortView; //Listiview for the COM ports Available
+    public String[] portNames;//String with the COM ports Available
     public static String PortNameSel; //Puerto seleccionado
     @FXML
     TextField Rutac;
-    //Esta variable sirve para saber si se ejecuto correctamente 
-    //La configuracion de variables y de projecto.
     /**
      * Initializes the controller class.
      */
-    static WebView viewb; //Cuando se asigna static los problemas de instancia de los
+    static WebView viewb; //Instance of the WebView.
     //metodos cambian...
     public static String ProjectPath=null;
-    public static int BoardType=-1; //Tipo de board para que seleccione el usuario.
+    public static int BoardType=-1; //Board type.
     static boolean ProjectconfigureOK=false;
     public String CompilerPath=null;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        final ObservableList PortsAvailable = FXCollections.observableArrayList();//Crear port List
-        String ruta=new Filereaderwriter().Openfile("src/Route/Route.txt");//Abrir y leer archivo de la ruta por defecto del compilador XC16.
+        String ruta=new Filereaderwriter().Openfile("src/Route/Route.txt");//Route for the compiler XC16.
         if(!ruta.isEmpty()){
             Rutac.setText(ruta);//Show route on specific text
             CompilerPath=ruta;//Compiler route on specific route.
         }
         final Stage dialogStage = new Stage();
         final DirectoryChooser directoryChooser = new DirectoryChooser();
-        final DirectoryChooser directoryChoosercomp = new DirectoryChooser();//Con directory chooser se ubica la carpeta de proyecto
-        ListingPorts(PortsAvailable);//Listado de puertos disponibles el listado se muestra en listview
-        PortView.getSelectionModel().selectedItemProperty().addListener(//Add listener a portView para eatablecer 
-                //que puerto fue seleccionado
+        final DirectoryChooser directoryChoosercomp = new DirectoryChooser();
+        ListingPorts(PortsAvailable);
+        PortView.getSelectionModel().selectedItemProperty().addListener(
             new ChangeListener<String>() {
 
            @Override
            public void changed(ObservableValue<? extends String> ov, String t, String t1) {
-              PortNameSel=t1;//Se asigna el valor del puerto seleccionado por el usuario.
+              PortNameSel=t1;
            }
            
         });
-        Board1.setOnAction(e -> handleButtonAction(e));//Eventos de checkbox si es seleccionado.
+        Board1.setOnAction(e -> handleButtonAction(e));
         Board2.setOnAction(e -> handleButtonAction(e));
 
        //Select folder location
-        Projectlocation.setOnAction(new EventHandler<ActionEvent>() {//Forma de generar la accion sobre el menu item
+        Projectlocation.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
                  directoryChooser.setTitle("Select your project location...");
                   File file = directoryChooser.showDialog(null);
@@ -115,32 +112,27 @@ public class ProjectWizardController implements Initializable {
                     
                         });
         //Code Select compiler location
-         Compilerlocation.setOnAction(new EventHandler<ActionEvent>() {//Forma de generar la accion sobre el menu item
+         Compilerlocation.setOnAction(new EventHandler<ActionEvent>() {//Event for compiler location...
             @Override public void handle(ActionEvent e) {
                  directoryChoosercomp.setTitle("Select your compiler location...");
                   File file = directoryChoosercomp.showDialog(null);
                     if (file != null) {
                         CompilerPath=file.getAbsolutePath();
                         Rutac.setText(CompilerPath);
-                        new Filereaderwriter().writerroute(CompilerPath);//Escribir ruta del compilador en el 
-                        //Archivo Route.txt...
-                        //System.out.println(file.getAbsolutePath());
-                       // openFile(file);
+                        new Filereaderwriter().writerroute(CompilerPath);//Writes the new route for the compiler.
                     }
                     }
                     
                         });
          //Code aceptar
-          Aceptar.setOnAction(new EventHandler<ActionEvent>() {//Forma de generar la accion sobre el menu item
+          Aceptar.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                if(ProjectPath!=null&&CompilerPath!=null&&BoardType!=-1){//Si los Path son diferentes de nulo
-                     LoadBlockly();//Cargar Blockly
-                     CopiarArchivosLibrearias();//Copiar archivos de librerias dentro de la carpeta del projecto seleccionado por el usuario.
-                     ProjectconfigureOK=true;//Si esta variable es verdadera la configuracion de proyecto fue adecuada de lo contrario 
-                     new Path().PathR(ProjectPath, CompilerPath);//Enviar los parametros del compilador para ejecutar
-                     //compilador via comandos...
-                     //No se permiten las operaciones de Load XML y SaveXML...
-                    ((Node)(e.getSource())).getScene().getWindow().hide();//Ocultar ventana de project wizard.
+                if(ProjectPath!=null&&CompilerPath!=null&&BoardType!=-1){
+                     LoadBlockly();//Load Blockly
+                     CopiarArchivosLibrearias();
+                     ProjectconfigureOK=true;
+                     new Path().PathR(ProjectPath, CompilerPath);//Send the parameters for the compiler
+                    ((Node)(e.getSource())).getScene().getWindow().hide();
                     }else{
                        ProjectconfigureOK=false;
                         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -154,17 +146,17 @@ public class ProjectWizardController implements Initializable {
 
        
             });    
-              //Code cancelar, este cierra la ventana de project wizard del sistema.
-             Cancelar.setOnAction(new EventHandler<ActionEvent>() {//Forma de generar la accion sobre el menu item
+              //Code to  cancel event button...
+             Cancelar.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                        final Stage dialogStage = new Stage();//Ceacion de Custom Dialog.
+                        final Stage dialogStage = new Stage();
                         dialogStage.initModality(Modality.WINDOW_MODAL);
                         final Image imageWarning = new Image(getClass().getResourceAsStream("about.png"));//Detectar imagen
                         final Button Cerrar=new Button("Accept");//Crear boton.
                         Cerrar.setOnAction(new EventHandler<ActionEvent>(){
                             @Override
                             public void handle(ActionEvent arg0) {
-                               ((Node)(arg0.getSource())).getScene().getWindow().hide();//Ocultar ventana de project wizard.   
+                               ((Node)(arg0.getSource())).getScene().getWindow().hide();  
                             }
                         });
                         Text t = TextBuilder.create().text("This is a text sample").build();
@@ -187,19 +179,17 @@ public class ProjectWizardController implements Initializable {
     }
 
    
-    private void ListingPorts(ObservableList PortsAvailable) {//Este metodo lista
-        portNames = SerialPortList.getPortNames(); //Leer los puertos seriales que esten disponibles 
+    private void ListingPorts(ObservableList PortsAvailable) {//List available ports
+        portNames = SerialPortList.getPortNames();  
         //en el sistema
                             for(int i = 0; i < portNames.length; i++){
                               //System.out.println(portNames[i]);
                               PortsAvailable.add(portNames[i]);
                             }
-        PortView.setItems(PortsAvailable);//Listar puertos en listView 
+        PortView.setItems(PortsAvailable);
     }
     
-    public void CargarWebView(WebView view) {//El metodo para pasar argumentos sin error es el siguiente
-        //Se envia primero la insatancia con el objeto en este caso un Webview, luego
-        //Se envia reenvia el objeto al un m[etodo de la clase principal
+    public void CargarWebView(WebView view) {
          viewb=view;
          //new GUIController().CargarWebview(viewb);
       }
@@ -210,7 +200,7 @@ public class ProjectWizardController implements Initializable {
       new GUIController().CargarWebview(viewb);
     }
     
-     public void CopiarArchivosLibrearias() {//Este metodo copia todos los archivos de librerias necesarios para el 
+     public void CopiarArchivosLibrearias() {//This method copies the libraries needed for the APP into user's folder.
         //funcionamiento de la interfaz.
        try {
            File FolderSource=new File("src/osa");
@@ -240,10 +230,10 @@ public class ProjectWizardController implements Initializable {
        }
     }
 
-    public void handleButtonAction(ActionEvent e) {
-        if(Board1.isSelected()){//si board 1 es seleccionada.
+    public void handleButtonAction(ActionEvent e) {//Check what board was selected...
+        if(Board1.isSelected()){
         BoardType=0;
-        }else if (Board2.isSelected()){//Si board2 es selccionada.
+        }else if (Board2.isSelected()){
         BoardType=1;    
         }
     }
