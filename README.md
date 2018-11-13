@@ -17,11 +17,10 @@ The application was tested in JDK version 1.8 and developed in JavaFX.
 
 * GUIController: Main class of the application, opens the different complements as Project Wizard, Plotter, Serial Visualizer, Save and Load.
 * Filereaderwriter: Copies the different folders and files needed in the aplication inside the user's folder. 
-* Path: Save the paths for the compiler and user folder.
+* Path: Saves the paths for the compiler and user folder.
 * Help: Opens the help for the application in the local browser.
 * PlayConsole: Opens the plotter and asks the number of variables to plot. This class adjust the elements employed for the class LivePlot.
-* Project Wizard: Opens the wizard, ask the route for the user's folder, the DSC (dsPIC 33FJ128GP804 or 33FJ128MC802) and the serial port (COMx) in order to 
-communicate with the development board.
+* Project Wizard: Opens the wizard, asks the route for the user's folder, the DSC (dsPIC 33FJ128GP804 or 33FJ128MC802) and the serial port (COMx) in order to communicate with the development board.
 * SerialPortVisual: Opens the serial port Visualizer. 
 
 Each class contains the respective fxml file (scene file) of JavaFX.
