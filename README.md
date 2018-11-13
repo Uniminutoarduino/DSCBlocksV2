@@ -17,9 +17,9 @@ For a quickly glance, see the web version of the app at http://www.seconlearning
 The application compiles and generates the code for the DSC in the convention of the Microchip XC16 compiler.
 The application was tested in JDK version 1.8 and developed in JavaFX.
 
-## Instalation
+## Installation
 
-Just create a Netbeans IDE project. Copies the content of the SRC folder inside in the classpath of your project. Add the Java libraries LiveGraph (Plotter) and jssc (Serial Port) provided in the full .zip file of the APP available at
+Just create a Netbeans IDE project. Copies the content of the SRC folder inside the classpath of your project. Add the Java libraries LiveGraph (Plotter) and jssc (Serial Port) provided in the full .zip file of the APP available at
 
 ## Java Classes explanation:
 
