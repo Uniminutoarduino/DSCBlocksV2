@@ -9,14 +9,14 @@ package controllyv2;
  *
  * @author Jonathan
  */
-public class Path {
+public class Path {//Constructor for the path of the project and compiler
    static String Project=null,Compiler=null;
     
    public void PathR(String ProjectPath, String CompilerPath){//Metodo para acceder a path de proyecto y compilador.
  
       Project=ProjectPath;//Asignar rutas de projecto y compilador.
       Compiler=CompilerPath;
-      Project=Project.replaceAll("\\\\","/");//Cambiar estilo de ruta de compilador y projecto
+      Project=Project.replaceAll("\\\\","/");//Change the URL of the project and Compiler according to Java.
       Compiler=Compiler.replaceAll("\\\\","/");
       System.out.println(Project+" "+Compiler);
     
