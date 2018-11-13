@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="697.0" prefWidth="1068.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllyv2.JavavxmlController">
+   <children>
+      <WebView fx:id="view" focusTraversable="false" layoutX="14.0" layoutY="34.0" prefHeight="484.0" prefWidth="1036.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></WebView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="41.0" layoutX="472.0" layoutY="34.0" stroke="#5447c6" strokeType="INSIDE" strokeWidth="3.0" width="576.0" />
+      <Button fx:id="Helpb" layoutX="940.0" layoutY="42.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="100.0" text="Help?">
+         <tooltip>
+            <Tooltip text="Acerca" />
+         </tooltip></Button>
+      <Button fx:id="Load" layoutX="828.0" layoutY="42.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="100.0" text="Load XML">
+         <tooltip>
+            <Tooltip text="Presiona este botón para cargar de nuevo tu proyecto" />
+         </tooltip>
+     </Button>
+      <Button fx:id="Save" layoutX="710.0" layoutY="42.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="100.0" text="Save XML">
+         <tooltip>
+            <Tooltip text="Guardar proyecto" />
+         </tooltip>
+      </Button>
+      <Button fx:id="compilar" layoutX="482.0" layoutY="42.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="100.0" text="Connect" underline="true">
+         <tooltip>
+            <Tooltip text="Conecta, compila y depura tu proyecto" />
+         </tooltip>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+      <Button fx:id="Plot" layoutX="591.0" layoutY="42.0" mnemonicParsing="false" onAction="#handle" prefHeight="25.0" prefWidth="100.0" text="plot">
+         <tooltip>
+            <Tooltip text="Conecta, compila y depura tu proyecto" />
+         </tooltip>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9494b9" height="41.0" layoutX="700.0" layoutY="34.0" stroke="#6356d7" strokeType="INSIDE" strokeWidth="2.0" width="4.0" />
+      <TextArea fx:id="lineacomando" editable="false" layoutX="14.0" layoutY="547.0" prefHeight="87.0" prefWidth="1036.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextArea>
+      <ProgressBar fx:id="progreso" layoutX="761.0" layoutY="651.0" prefHeight="25.0" prefWidth="235.0" progress="0.0" />
+      <ProgressIndicator fx:id="indicador" layoutX="1019.0" layoutY="647.0" prefHeight="34.0" prefWidth="29.0" progress="0.0" />
+      <Label layoutX="691.0" layoutY="655.0" prefHeight="17.0" prefWidth="57.0" text="Progress:" textAlignment="CENTER" underline="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="523.0" prefHeight="17.0" prefWidth="57.0" text="Output" underline="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <MenuBar layoutX="14.0" layoutY="2.0" prefHeight="25.0" prefWidth="1036.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="Configuracion" mnemonicParsing="false" onAction="#handle" text="Configuration" />
+                  <MenuItem fx:id="Salir" mnemonicParsing="false" onAction="#handle" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help?">
+            <items>
+              <MenuItem fx:id="Help" mnemonicParsing="false" onAction="#handle" text="Help" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

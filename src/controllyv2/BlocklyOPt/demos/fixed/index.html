@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
+
+  <title>Blockly Demo: Fixed Blockly</title>
+  <script src="../../blockly_compressed.js"></script>
+  <script src="../../blocks_compressed.js"></script>
+  <script src="../../dart_compressed.js"></script>
+  <script src="../../msg/js/en.js"></script>
+  <style>
+    body {
+      background-color: #fff;
+      font-family: sans-serif;
+    }
+    h1 {
+      font-weight: normal;
+      font-size: 140%;
+    }
+
+	.inline-div {
+    display:inline-block;
+}
+.inline-txtarea {
+    resize: none;
+    border : 2px solid red;
+    height:125px;
+}
+  </style>
+</head>
+<body>
+
+
+  <p style="text-align: center;"><span style="font-size:24px;"><span style="font-family:times new roman,times,serif;"></span></span>
+  <p><span style="font-family:times new roman,times,serif;">Configura el oscilador arrastrando el bloque de oscilador estableciendo la frecuencia deseada y los valores de N1, N2 y M de acuerdo al datasheet del <i>dsPIC 33FJ128MC802 o 33FJ128GP804</i></span></p>
+
+  <table><tr><th><div id="blocklyDiv" style="height: 500px; width: 800px; border:solid 1px blue;" align="right"></div></th>
+  </tr><tr><th><textarea id="myDIV" align="left" style="border:solid 1px orange; height: 300px; width: 795px;">Codigo equivalente</textarea></th></tr></table>
+
+
+  <xml id="toolbox" style="display: none">
+       <block type="osc"></block>
+      <block type="math_number"></block>
+  </xml>
+
+<p></p>
+
+
+<script>
+
+    var demoWorkspace = Blockly.inject('blocklyDiv',
+        {media: '../../media/',
+         toolbox: document.getElementById('toolbox')});
+
+function myUpdateFunction(event) {
+  var code = Blockly.Dart.workspaceToCode(demoWorkspace);
+  document.getElementById('myDIV').value = code;
+}
+demoWorkspace.addChangeListener(myUpdateFunction);
+
+
+    function showCode() {
+      // Generate JavaScript code and display it.
+      Blockly.Dart.INFINITE_LOOP_TRAP = null;
+      var code = Blockly.Dart.workspaceToCode(demoWorkspace);
+	  document.getElementById('myDIV').innerHTML = code;
+      alert(code);
+    }
+</script>
+
+</body>
+</html>

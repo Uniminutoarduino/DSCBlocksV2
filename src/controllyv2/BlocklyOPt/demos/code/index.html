@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css" media="screen">>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: absolute;
+    z-index: 9999; /*hace que no se translape las barras del scroll con el menu emergente (NAV) */
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 100px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+ #editor {
+        margin: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button2 {background-color: #008CBA;
+		  border-radius: 6px;
+		 } /* Blue */
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+}
+</style>
+
+<script src="/storage.js"></script>
+  <script src="../../blockly_compressed.js"></script>
+  <script src="../../blocks_compressed.js"></script>
+  <script src="../../javascript_compressed.js"></script>
+  <script src="../../python_compressed.js"></script>
+  <script src="../../php_compressed.js"></script>
+  <script src="../../lua_compressed.js"></script>
+  <script src="../../dart_compressed.js"></script>
+  <script src="code.js"></script>
+  <script src="Metro/js/metro.min.js"></script>
+   <link rel="stylesheet" src="Metro/css/metro-all.min.css">
+</head>
+<body>
+<script>
+function GuardarXML(){//Guarda el contenido del los bloques en formato XML.
+
+var xml = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
+var xml_text = Blockly.Xml.domToPrettyText(xml);
+alert(xml_text); //Mostrar evento Alert con el texto en formato xml para que javaFX lo tome.
+}
+
+function AbrirXML(xml_text){//Abre el contenido de blocky renderizandolo correctamente.
+
+var xml = Blockly.Xml.textToDom(xml_text);
+Blockly.Xml.domToWorkspace(xml,Blockly.mainWorkspace);
+}
+</script>
+<table class="main-story-image" style="float: left; width: 180px; margin: 0 0px 0px 0px;>
+<tr>
+<td align="left" border=0px cellspacing="0">
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+ <!--<textarea id="text" class="content" wrap="off" cols=60 rows=30 style="font-family:'Courier New'"></textarea>
+-->
+<div id="editor" style="height: 570px; width: 480px;">
+</div>
+ </div>
+
+<button class="button button2" ; onclick="openNav()" style="font-size:13px;"><b> Get <br/>XC16 <i>Code</i></b></button>
+<!--div id="mySidenav" class="sidenav">
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+ <a href="#">Code (XC16)</a>
+  </div>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+-->
+  </td>
+  <td>
+  <div id="blocklyDiv" style="height: 580px; width: 960px;"></div>
+   <xml id="toolbox" style="display: none">
+   <category name="Oscillator" colour="170">
+        <block type="osc"></block>
+      </category>
+      <sep></sep>
+      <category name="Input-Output(I/O)" colour="150">
+          <block type="salidaled_alto_bajo"></block>
+          <block type="salidaalto"></block>
+          <block type="salidabajo"></block>
+          <block type="leerpuerto"></block>
+          <block type="toggle"></block>
+          <block type="alldig"></block>
+          <block type="negate_output"></block>
+
+        </category>
+          <sep></sep>
+<category name="Peripherals" colour="100">
+<block type="adcb"></block>
+<block type="adcmultiple"></block>
+<block type="pwmotuputb"></block>
+<block type="spiwritedac"></block>
+
+</category>
+<sep></sep>
+<category name="Communications" colour="160">
+<block type="uart"></block>
+<block type="uarttext"></block>
+<block type="uartfloat"></block>
+<block type="readuart"></block>
+<block type="uartready"></block>
+
+</category>
+    <sep></sep>
+    <category name="RTOS" colour="210">
+     <block type="ostaskcreate"></block>
+     <block type="os_init"></block>
+     <block type="os_run"></block>
+     <block type="os_timer"></block>
+     <block type="os_yield"></block>
+     <block type="os_delay"></block>
+    </category>
+        <sep></sep>
+    <category name="Interrupts" colour="200">
+      <block type="timerinterrupt"></block>
+    </category>
+        <sep></sep>
+   <category name="Delay" colour="21">
+	<block type="delay"></block>
+	<block type="delayusb"></block>
+  <block type="nop"></block>
+  <block type="cycledelay"></block>
+    </category>
+<sep></sep>
+
+<category name="Loops" colour="120">
+
+  <block type="controls_whileUntil"></block>
+  <block type="controls_for">
+    <value name="FROM">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <value name="TO">
+      <shadow type="math_number">
+        <field name="NUM">10</field>
+      </shadow>
+    </value>
+    <value name="BY">
+      <shadow type="math_number">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="controls_flow_statements"></block>
+</category>
+</category>
+<sep></sep>
+<category name="Logic" colour="255">
+  <block type="controls_if"></block>
+  <block type="logic_compare"></block>
+  <block type="logic_operation"></block>
+  <block type="logic_negate"></block>
+  <block type="logic_boolean"></block>
+</category>
+<sep></sep>
+    <category name="Math" colour="230">
+      <block type="math_number"></block>
+      <block type="math_arithmetic">
+        <value name="A">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="B">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_single">
+        <value name="NUM">
+          <shadow type="math_number">
+            <field name="NUM">9</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_trig">
+        <value name="NUM">
+          <shadow type="math_number">
+            <field name="NUM">45</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_constant"></block>
+      <block type="math_number_property">
+        <value name="NUMBER_TO_CHECK">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_round">
+        <value name="NUM">
+          <shadow type="math_number">
+            <field name="NUM">3.1</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_on_list"></block>
+      <block type="math_modulo">
+        <value name="DIVIDEND">
+          <shadow type="math_number">
+            <field name="NUM">64</field>
+          </shadow>
+        </value>
+        <value name="DIVISOR">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_constrain">
+        <value name="VALUE">
+          <shadow type="math_number">
+            <field name="NUM">50</field>
+          </shadow>
+        </value>
+        <value name="LOW">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="HIGH">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_random_int">
+        <value name="FROM">
+          <shadow type="math_number">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="TO">
+          <shadow type="math_number">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+      </block>
+      <block type="math_random_float"></block>
+    </category>
+
+  </category>
+
+    <!--  <block type="logic_null"></block>
+  <block type="logic_ternary"></block>-->
+
+
+  <sep></sep>
+<category name="Variables" colour="300">
+<block type="variables_declare"></block>
+	<block type="variables_get"></block>
+	<block type="variables_set"></block>
+	</category>
+
+<sep></sep>
+<category name="Text" colour="250">
+  <block type="text"></block>
+</category>
+<sep></sep>
+<category name="Functions" custom="PROCEDURE" colour="50"></category>
+
+  </xml>
+ </td>
+</tr>
+</table>
+<script src="Metro/js/metro.min.js"></script>
+<script src="ace-builds-master/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/cobalt");
+    editor.session.setMode("ace/mode/c_cpp");
+</script>
+
+<script>
+workspace.registerButtonCallback(myFirstButtonPressed, openNavi);
+function openNavi() {
+
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+  <script> <!--Forma de colocar los iconos de zoom, etc>
+    var workspace = Blockly.inject('blocklyDiv',
+    {toolbox: document.getElementById('toolbox'),
+     zoom:
+         {controls: true,
+          wheel: true,
+          startScale: 1.0,
+          maxScale: 3,
+          minScale: 0.3,
+          scaleSpeed: 1.2},
+	 grid:
+         {spacing: 20,
+          length: 3,
+          colour: '#ccc',
+          snap: true},
+     trashcan: true});
+
+
+
+
+function myUpdateFunction(event) {
+  var code = Blockly.Dart.workspaceToCode(workspace);
+  //document.getElementById('text').value = code;
+  editor.setValue(code);
+}
+workspace.addChangeListener(myUpdateFunction)
+
+function openNav() {
+	//workspace.addVariable("hola", true);
+    //Blockly.Variables.createVariable(workspace, null, 'panda');
+    document.getElementById("mySidenav").style.width = "550px";
+
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+function ContenidoProgramacion(){//Esta función permite obtener el código de programación para el
+ var i=0;
+ //Blockly.Dart.workspaceToCode(workspace);
+ var CodigoTexto; //Variable a obtener.
+ //for(i=0;i<2;i++){
+ CodigoTexto = editor.getValue(); //El codigo de texto se ha asignado a una variable.
+ //}
+ //Blockly.Variables.createVariable('hola');
+ alert(CodigoTexto);
+
+}
+
+function Renamevar(oldvar,newvar){//rename var
+Blockly.Variables.renameVariable('item','i', Blockly.mainWorkspace);
+}
+
+
+  </script>
+
+
+
+</body>
+</html>

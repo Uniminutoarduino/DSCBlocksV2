@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>LiveGraph version 1.1.4. DataFileSettings.</comment>
+<entry key="DataFile">C:\Users\Jonathan\Documents\Documentos Jonathan\Uniminuto\Archivos proyecto Controlly V2\Proyectos prueba\Data.csv</entry>
+<entry key="ShowOnlyTailData">0</entry>
+<entry key="UpdateFrequency">10</entry>
+<entry key="DoNotCacheData">0</entry>
+</properties>

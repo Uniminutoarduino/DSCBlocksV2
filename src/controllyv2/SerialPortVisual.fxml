@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1138.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controllyv2.SerialPortVisualController">
+   <children>
+      <TextArea fx:id="serialarea" layoutX="14.0" layoutY="61.0" prefHeight="733.0" prefWidth="1110.0" />
+      <ToolBar layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="1110.0">
+        <items>
+          <Button fx:id="serialabrir" mnemonicParsing="false" text="Open">
+               <tooltip>
+                  <Tooltip text="Open port" />
+               </tooltip>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="serialcerrar" mnemonicParsing="false" text="Close">
+               <tooltip>
+                  <Tooltip text="Close port" />
+               </tooltip>
+            </Button>
+        </items>
+      </ToolBar>
+   </children>
+</AnchorPane>

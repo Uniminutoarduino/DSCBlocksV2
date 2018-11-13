@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="58.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllyv2.HelpController">
+   <children>
+      <TextArea editable="false" layoutX="14.0" layoutY="14.0" prefHeight="32.0" prefWidth="570.0" text="The help is going to open in your browser.">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </TextArea>
+   </children>
+</AnchorPane>

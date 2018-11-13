@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="828.0" prefWidth="1161.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllyv2.GUIController">
+   <children>
+      <VBox layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="795.0" prefWidth="1134.0">
+         <children>
+            <MenuBar fx:id="Toolmenu" prefHeight="25.0" prefWidth="1126.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem fx:id="configure" mnemonicParsing="false" text="Configuration" />
+                    <MenuItem fx:id="close" mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Run">
+                    <items>
+                      <MenuItem fx:id="program" mnemonicParsing="false" text="Program" />
+                        <MenuItem fx:id="plotb" mnemonicParsing="false" text="Plot" />
+                    </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Help?">
+                  <items>
+                    <MenuItem fx:id="about" mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <ToolBar id="tooolbar" fx:id="Toolbar" prefHeight="40.0" prefWidth="1126.0">
+              <items>
+                <Button fx:id="wizard" mnemonicParsing="false">
+                     <tooltip>
+                        <Tooltip text="Configure project" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="save" mnemonicParsing="false">
+                     <tooltip>
+                        <Tooltip text="Save file" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="upload" mnemonicParsing="false">
+                     <tooltip>
+                        <Tooltip text="Upload file" />
+                     </tooltip>
+                  </Button>
+                  <Separator orientation="VERTICAL" prefHeight="30.0" prefWidth="0.0" />
+                  <Button fx:id="usb" mnemonicParsing="false">
+                     <tooltip>
+                        <Tooltip text="Program target" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="plot" mnemonicParsing="false">
+                     <tooltip>
+                        <Tooltip text="Plot signals" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="serialport" mnemonicParsing="false">
+                     <tooltip>
+                        <Tooltip text="Serial port visualizer" />
+                     </tooltip>
+                  </Button>
+                  <Separator orientation="VERTICAL" prefHeight="30.0" prefWidth="0.0" />
+                  <Button fx:id="help" mnemonicParsing="false">
+                      
+                  </Button>
+              </items>
+            </ToolBar>
+            <WebView fx:id="view" prefHeight="779.0" prefWidth="1534.0" />
+            <Label prefHeight="17.0" prefWidth="72.0" text="Output: " underline="true" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="lineacomando" prefHeight="125.0" prefWidth="1134.0" />
+            <Separator orientation="VERTICAL" prefHeight="19.0" prefWidth="1133.0" />
+            <Label prefHeight="17.0" prefWidth="72.0" text="Progress: " textAlignment="CENTER" underline="true" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ProgressBar fx:id="progreso" prefHeight="20.0" prefWidth="1133.0" progress="0.0" />
+            <Separator orientation="VERTICAL" prefHeight="19.0" prefWidth="1133.0" />
+            <ProgressIndicator fx:id="indicador" prefHeight="36.0" prefWidth="1134.0" progress="0.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
