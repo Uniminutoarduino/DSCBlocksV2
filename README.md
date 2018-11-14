@@ -60,3 +60,6 @@ Do not remove this files. These files contains the header elements for the plott
 **Inside the folder Route exists a .txt file that saves the route of the compiler XC16 in your OS. (Do not remove!)**
 
 Any change in the code (generator or blocks) must be reconfigurated in Blockly. To do this, save the file and click in Python Script Build.py (src\controllyv2\BlocklyOPt\build.py). You must have a internet connection and Python version 2.7 or higher.
+
+###
+This work is supported the Control research Incubator (SeCon) in the program of Technology of Electronics at Uniminuto University (Bogotá, Colombia)
