@@ -9,6 +9,8 @@ Correspondence: jalvarez@uniminuto.edu
 
 Research Gate: https://www.researchgate.net/profile/Jonathan_Alvarez_Ariza
 
+This work is supported the Control research Incubator (SeCon) in the program of Technology of Electronics at Uniminuto University (Bogotá, Colombia)
+
 Description: 
 * DSCBlocks is an application to program DsPICs series 33FJXXXGP/MCXXX from Microchip Inc. through Visual Algorithms (Google Blockly). 
 
@@ -62,4 +64,4 @@ Do not remove this files. These files contains the header elements for the plott
 Any change in the code (generator or blocks) must be reconfigurated in Blockly. To do this, save the file and click in Python Script Build.py (src\controllyv2\BlocklyOPt\build.py). You must have a internet connection and Python version 2.7 or higher.
 
 ###
-This work is supported the Control research Incubator (SeCon) in the program of Technology of Electronics at Uniminuto University (Bogotá, Colombia)
+
