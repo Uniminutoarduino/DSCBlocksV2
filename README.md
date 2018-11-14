@@ -9,7 +9,7 @@ Correspondence: jalvarez@uniminuto.edu
 
 Research Gate: https://www.researchgate.net/profile/Jonathan_Alvarez_Ariza
 
-This work is supported the Control research Incubator (SeCon) in the program of Technology of Electronics at Uniminuto University (Bogotá, Colombia)
+This work is supported the Control research Incubator (SeCon) in the program of Technology of Electronics at Uniminuto University (Bogotá, Colombia) http://www.uniminuto.edu/
 
 Description: 
 * DSCBlocks is an application to program DsPICs series 33FJXXXGP/MCXXX from Microchip Inc. through Visual Algorithms (Google Blockly). 
