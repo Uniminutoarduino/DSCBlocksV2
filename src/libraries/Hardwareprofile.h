@@ -10,12 +10,12 @@
 
 
 
-//Definicion de LEDS built in
+//Built-in LEDS in the board
 #define LED1 PORTBbits.RB12
 #define TRISLED1 TRISBbits.TRISB12
 #define LED2 PORTBbits.RB13
 #define TRISLED2 TRISBbits.TRISB13
-//Definicion de pines de salida
+//Definition of output pin registers (TRISx and PORTx)
 #define TRISPIN0 TRISCbits.TRISC0
 #define TRISPIN1 TRISCbits.TRISC1
 #define TRISPIN2 TRISCbits.TRISC2
@@ -24,6 +24,7 @@
 #define PIN1 PORTCbits.RC1
 #define PIN2 PORTCbits.RC2
 #define PIN3 PORTCbits.RC3
+//Definition of input pin registers (TRISx and PORTx)
 #define TRISINPIN0 TRISAbits.TRISA0
 #define TRISINPIN1 TRISAbits.TRISA1
 #define TRISINPIN2 TRISBbits.TRISB0
@@ -36,6 +37,7 @@
 #define PININ3 PORTBbits.RB1
 #define PININ4 PORTBbits.RB2
 #define PININ5 PORTBbits.RB3
+//Chip Select for SPI
 #define CS PORTBbits.RB5
 #define CSTRIS TRISBbits.TRISB5
 
