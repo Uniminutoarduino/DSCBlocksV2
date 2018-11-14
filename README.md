@@ -19,7 +19,7 @@ The application was tested in JDK version 1.8 and developed in JavaFX.
 
 ## Installation
 
-Just create a Netbeans IDE project. Copies the content of the SRC folder inside the classpath of your project. Add the Java libraries LiveGraph (Plotter) and jssc (Serial Port) provided in the full .zip file of the APP available at http://www.seconlearning.com/DSCBlockV2/BlocklyOPt/
+Just create a Netbeans IDE project. Copies the content of the SRC folder inside the classpath of your project. Add the Java libraries LiveGraph (Plotter) and jssc (Serial Port) provided in the full .zip file of the APP available at http://www.seconlearning.com/DSCBlockV2/DSCBlocksFull.zip
 
 The development board (Schematic and PCB) is in the file ControllyBoard3.0. The PCB was built in Eagle Cadsoft 7.3 version. If you want to change the hardware go to the file hardwareprofile.h at /src/libraries/Hardwareprofile.h and edit it according to your needs.
 
