@@ -25,7 +25,7 @@ Just create a Netbeans IDE project. Copies the content of the SRC folder inside 
 
 The development board V(dsPIC33FJ128GP804) (Schematic and PCB) is in the file ControllyBoard3.0.rar. The PCB was built in Eagle Cadsoft 7.3 version. If you want to change the hardware go to the file hardwareprofile.h at /src/libraries/Hardwareprofile.h and edit it according to your needs.
 
-The version of development board for dsPIC33FJ128MC802 is in the file ControllyBoardTest.rar
+The version of development board for dsPIC33FJ128MC802 is in the file TestBoard.rar
 
 ## Java Classes explanation:
 
