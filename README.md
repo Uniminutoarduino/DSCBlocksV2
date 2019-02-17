@@ -41,7 +41,7 @@ Each class contains the respective fxml file (scene file) of JavaFX.
 
 ## Other files:
 
-When you download the application see the folder's tree. The following files must be inside of your App folder.
+When you download the application (see the folder's tree). The following files must be inside of your App folder.
 
 session.lgdfs
 
