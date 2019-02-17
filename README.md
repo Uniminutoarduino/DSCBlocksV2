@@ -74,7 +74,7 @@ Don't forget in order to compile Blockly, the closure library folder, see the fo
 The learning materials can be found in the following link: 
 http://seconlearning.com/xerte/play.php?template_id=5
 
-Part I is in spanish version
+Part I is in spanish version (DSC fundamentals)
 
 Part II (Application tutorial) is in spanish-english version
 
