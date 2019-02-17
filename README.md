@@ -67,5 +67,16 @@ Do not remove this files. These files contains the header elements for the plott
 
 Any change in the code (generator or blocks) must be reconfigurated in Blockly. To do this, save the file and click in Python Script Build.py (src\controllyv2\BlocklyOPt\build.py). You must have a internet connection and Python version 2.7 or higher.
 
+## Learning Materials
+
+The learning materials can be found in the following link: 
+http://seconlearning.com/xerte/play.php?template_id=5
+
+Part I is in spanish version
+
+Part II (Application tutorial is in spanish-english) version
+
+**Thank you for your interest in this Open (Hardware-Software) project.
+
 ###
 
