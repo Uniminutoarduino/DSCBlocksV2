@@ -37,11 +37,11 @@ The version of development board for dsPIC33FJ128MC802 is in the file ControllyB
 * Project Wizard: Opens the wizard, asks the route for the user's folder, the DSC (dsPIC 33FJ128GP804 or 33FJ128MC802) and the serial port (COMx) in order to communicate with the development board.
 * SerialPortVisual: Opens the serial port Visualizer. 
 
-When you download the application see the folder's tree. The following files must be inside of your App folder.
-
 Each class contains the respective fxml file (scene file) of JavaFX.
 
 ## Other files:
+
+When you download the application see the folder's tree. The following files must be inside of your App folder.
 
 session.lgdfs
 
