@@ -23,7 +23,9 @@ The application was tested in JDK version 1.8 and developed in JavaFX.
 
 Just create a Netbeans IDE project. Copies the content of the SRC folder inside the classpath of your project. Add the Java libraries LiveGraph (Plotter) and jssc (Serial Port) provided in the full .zip file of the APP available at http://www.seconlearning.com/DSCBlockV2/DSCBlocksFull.zip
 
-The development board (Schematic and PCB) is in the file ControllyBoard3.0. The PCB was built in Eagle Cadsoft 7.3 version. If you want to change the hardware go to the file hardwareprofile.h at /src/libraries/Hardwareprofile.h and edit it according to your needs.
+The development board V(dsPIC33FJ128GP804) (Schematic and PCB) is in the file ControllyBoard3.0.rar. The PCB was built in Eagle Cadsoft 7.3 version. If you want to change the hardware go to the file hardwareprofile.h at /src/libraries/Hardwareprofile.h and edit it according to your needs.
+
+The version of development board for dsPIC33FJ128MC802 is in the file ControllyBoardTest.rar
 
 ## Java Classes explanation:
 
@@ -34,6 +36,8 @@ The development board (Schematic and PCB) is in the file ControllyBoard3.0. The 
 * PlayConsole: Opens the plotter and asks the number of variables to plot. This class adjust the elements employed for the class LivePlot.
 * Project Wizard: Opens the wizard, asks the route for the user's folder, the DSC (dsPIC 33FJ128GP804 or 33FJ128MC802) and the serial port (COMx) in order to communicate with the development board.
 * SerialPortVisual: Opens the serial port Visualizer. 
+
+When you download the application see the folder's tree. The following files must be inside of your App folder.
 
 Each class contains the respective fxml file (scene file) of JavaFX.
 
