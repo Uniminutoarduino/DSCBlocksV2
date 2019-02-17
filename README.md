@@ -67,6 +67,8 @@ Do not remove this files. These files contains the header elements for the plott
 
 Any change in the code (generator or blocks) must be reconfigurated in Blockly. To do this, save the file and click in Python Script Build.py (src\controllyv2\BlocklyOPt\build.py). You must have a internet connection and Python version 2.7 or higher.
 
+Don't forget in order to compile Blockly, the closure library folder, see the following link: https://developers.google.com/blockly/guides/modify/web/closure
+
 ## Learning Materials
 
 The learning materials can be found in the following link: 
