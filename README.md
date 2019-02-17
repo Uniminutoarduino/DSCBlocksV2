@@ -74,7 +74,7 @@ http://seconlearning.com/xerte/play.php?template_id=5
 
 Part I is in spanish version
 
-Part II (Application tutorial is in spanish-english) version
+Part II (Application tutorial) is in spanish-english version
 
 **Thank you for your interest in this Open (Hardware-Software) project.
 
