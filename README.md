@@ -78,7 +78,7 @@ Part I is in spanish version (DSC fundamentals)
 
 Part II (Application tutorial) is in spanish-english version
 
-**Thank you for your interest in this Open (Hardware-Software) project.
+**Thank you for your interest in this Open (Hardware-Software) project.**
 
 ###
 
