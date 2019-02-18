@@ -55,17 +55,17 @@ Do not remove this files. These files contains the header elements for the plott
 
 **The main web page for the application is located in the folder \src\controllyv2\BlocklyOPt\demos\code\index.html**
 
-**Generator for XC16 compiler for the DSCs is located at src\controllyv2\BlocklyOPt\generators\dart\base2.js**
+**The Generator for XC16 compiler for the DSCs is located at src\controllyv2\BlocklyOPt\generators\dart\base2.js**
 
-**Blocks (graphical appearance) for the peripherals for the DSC are located at src\controllyv2\BlocklyOPt\blocks\base2.js**
+**The Blocks (graphical appearance) for the peripherals and ports for the DSC are located at src\controllyv2\BlocklyOPt\blocks\base2.js**
 
-**Libraries for UART, Control and HardwareProfile (macros) for the development board are located in the folder libraries.**
+**Libraries for UART, Control and HardwareProfile (macros) for the development board are located in the folder "libraries".**
 
 **RTOS (Real Time Operating System) (OSA) is located at the folder OSA.**
 
 **ds30Console.exe for the bootloader is located at the folder src (Do not remove!)**
 
-**Inside the folder exists a Route.txt file that saves the route of the compiler XC16 in your OS. (Do not remove!)**
+**Inside the SRC folder exists a folder called Route with a file Route.txt that saves the route of the compiler XC16 in your OS. (Do not remove!)**
 
 Any change in the code (generator or blocks) must be reconfigurated in Blockly. To do this, save the file and click in Python Script Build.py (src\controllyv2\BlocklyOPt\build.py). You must have a internet connection and Python version 2.7 or higher.
 
