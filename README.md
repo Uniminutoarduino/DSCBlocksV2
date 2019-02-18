@@ -27,6 +27,8 @@ The development board V(dsPIC33FJ128GP804) (Schematic and PCB) is in the file Co
 
 The version of development board for dsPIC33FJ128MC802 is in the file TestBoard.rar
 
+Due to the development boards use a FTDI232RL chip the correct driver in order to transfer the .hex file to the device can be found in the file: CDM 2.08.28 WHQL Certified
+
 ## Java Classes explanation:
 
 * GUIController: Main class of the application, opens the different complements as Project Wizard, Plotter, Serial Visualizer, Save and Load.
@@ -38,8 +40,6 @@ The version of development board for dsPIC33FJ128MC802 is in the file TestBoard.
 * SerialPortVisual: Opens the serial port Visualizer. 
 
 Each class contains the respective fxml file (scene file) of JavaFX.
-
-Due to the development boards use a FTDI232RL chip the correct driver in order to transfer the .hex file to the device can be found in the file: CDM 2.08.28 WHQL Certified
 
 ## Other files:
 
