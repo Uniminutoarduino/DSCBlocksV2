@@ -39,6 +39,8 @@ The version of development board for dsPIC33FJ128MC802 is in the file TestBoard.
 
 Each class contains the respective fxml file (scene file) of JavaFX.
 
+Due to the development boards use a FTDI232RL chip the correct driver in order to transfer the .hex file to the device can be found in the file: CDM 2.08.28 WHQL Certified
+
 ## Other files:
 
 When you download the application (see the folder's tree). The following files must be inside of your App folder.
