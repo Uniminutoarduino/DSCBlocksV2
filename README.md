@@ -63,9 +63,9 @@ Do not remove this files. These files contains the header elements for the plott
 
 **RTOS (Real Time Operating System) (OSA) is located at the folder OSA.**
 
-**ds30Console for the bootloader is located at the folder src (Do not remove!)**
+**ds30Console.exe for the bootloader is located at the folder src (Do not remove!)**
 
-**Inside the folder Route exists a .txt file that saves the route of the compiler XC16 in your OS. (Do not remove!)**
+**Inside the folder exists a Route.txt file that saves the route of the compiler XC16 in your OS. (Do not remove!)**
 
 Any change in the code (generator or blocks) must be reconfigurated in Blockly. To do this, save the file and click in Python Script Build.py (src\controllyv2\BlocklyOPt\build.py). You must have a internet connection and Python version 2.7 or higher.
 
