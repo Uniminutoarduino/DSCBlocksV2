@@ -35,7 +35,7 @@ Due to the development boards use a FTDI232RL chip, the correct driver in order 
 * Filereaderwriter: Copies the different folders and files needed in the aplication inside the user's folder. 
 * Path: Saves the paths for the compiler and user folder.
 * Help: Opens the help for the application in the local browser.
-* PlayConsole: Opens the plotter and asks the number of variables to plot. This class adjusts the elements employed for the class LivePlot.
+* PlayConsole: Opens the plotter and asks the number of variables to plot. This class adjusts the elements employed for the class LivePlot which is a Java plotter. The information of this class can be found at: https://sourceforge.net/projects/live-graph/.
 * Project Wizard: Opens the wizard, asks the route for the user's folder, the DSC (dsPIC 33FJ128GP804 or 33FJ128MC802) and the serial port (COMx) in order to communicate with the development board.
 * SerialPortVisual: Opens the serial port Visualizer. 
 
