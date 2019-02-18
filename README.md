@@ -23,11 +23,11 @@ The application was tested in JDK version 1.8 and developed in JavaFX.
 
 Just create a Netbeans IDE project. Copies the content of the SRC folder inside the classpath of your project. Add the Java libraries LiveGraph (Plotter) and jssc (Serial Port) provided in the full .zip file of the APP available at http://www.seconlearning.com/DSCBlockV2/DSCBlocksFull.zip
 
-The development board V(dsPIC33FJ128GP804) (Schematic and PCB) is in the file ControllyBoard3.0.rar. The PCB was built in Eagle Cadsoft 7.3 version. If you want to change the hardware go to the file hardwareprofile.h at /src/libraries/Hardwareprofile.h and edit it according to your needs.
+The development board (dsPIC33FJ128GP804) (Schematic and PCB) is in the file ControllyBoard3.0.rar. The PCB was built in Eagle Cadsoft 7.3 version. If you want to change the hardware go to the file hardwareprofile.h at /src/libraries/Hardwareprofile.h and edit it according to your needs.
 
 The version of development board for dsPIC33FJ128MC802 is in the file TestBoard.rar
 
-Due to the development boards use a FTDI232RL chip the correct driver in order to transfer the .hex file to the device can be found in the file: CDM 2.08.28 WHQL Certified.zip
+Due to the development boards use a FTDI232RL chip, the correct driver in order to transfer the .hex file to the device can be found in the file: CDM 2.08.28 WHQL Certified.zip
 
 ## Java Classes explanation:
 
