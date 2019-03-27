@@ -19,6 +19,11 @@ For a quick glance, see the web version of the app at http://www.seconlearning.c
 The application compiles and generates the code for the DSC in the convention of the Microchip XC16 compiler.
 The application was tested in JDK version 1.8 and developed in JavaFX.
 
+This a video of the different platform functionalities:
+
+
+[![DSCBlocksV2 Functioning!](https://img.youtube.com/vi/893QkAonpLo/0.jpg)](https://www.youtube.com/watch?v=893QkAonpLo "DSCBlocks functioning")
+
 ## Installation
 
 Just create a Netbeans IDE project. Copies the content of the SRC folder inside the classpath of your project. Add the Java libraries LiveGraph (Plotter) and jssc (Serial Port) provided in the full .zip file of the APP available at http://www.seconlearning.com/DSCBlockV2/DSCBlocksFull.zip
