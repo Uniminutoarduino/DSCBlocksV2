@@ -46,6 +46,7 @@ Due to the development boards use a FTDI232RL chip, the correct driver in order 
 
 Each class contains the respective fxml file (scene file) of JavaFX.
 
+
 ## Other files:
 
 When you download the application (see the folder's tree). The following files must be inside of your App folder.
@@ -75,6 +76,19 @@ Do not remove this files. These files contains the header elements for the plott
 Any change in the code (generator or blocks) must be reconfigurated in Blockly. To do this, save the file and click in Python Script Build.py (src\controllyv2\BlocklyOPt\build.py). You must have a internet connection and Python version 2.7 or higher.
 
 Don't forget in order to compile Blockly, the closure library folder, see the following link: https://developers.google.com/blockly/guides/modify/web/closure
+
+
+##Examples
+
+Some examples can be found in the folder (Examples), for example:
+
+1. Turn on LED
+2. RTOS (OSA)
+3. ReadPin
+4. ADC
+
+The examples are in .xml file. Open the application and load them with the button (upload).
+
 
 ## Learning Materials
 
