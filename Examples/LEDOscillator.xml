@@ -1,0 +1,39 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="osc" id="*M^ZAUah62UZ`Oo@G+YV" x="30" y="150">
+    <value name="M">
+      <block type="math_number" id="ta77-Joax)2]acxwd!/=">
+        <field name="NUM">40</field>
+      </block>
+    </value>
+    <value name="N1">
+      <block type="math_number" id="3-bHV`:Nukf+OU#v;blb">
+        <field name="NUM">2</field>
+      </block>
+    </value>
+    <value name="N2">
+      <block type="math_number" id="Gkjc]tq|ddoZ/^B!Lu@`">
+        <field name="NUM">2</field>
+      </block>
+    </value>
+    <next>
+      <block type="controls_whileUntil" id="9pVBtsm3y,iFU+,ngG2{">
+        <field name="MODE">WHILE</field>
+        <value name="BOOL">
+          <block type="logic_boolean" id="fFav:K#-wt]BY`n?c8#E">
+            <field name="BOOL">TRUE</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="toggle" id=":.:Zyphk{#%yy/`E,Kqz">
+            <field name="Pin">LED1</field>
+            <value name="Osc">
+              <block type="math_number" id="a=mlv~mQ@tegx#P(q=va">
+                <field name="NUM">100</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

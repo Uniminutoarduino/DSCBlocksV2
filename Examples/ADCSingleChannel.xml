@@ -1,0 +1,93 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="variables_declare" id="({,hS^:Ee^i|aM7[GMe]" x="190" y="90">
+    <field name="VAR">i</field>
+    <field name="TYPE">int</field>
+    <value name="VALUE">
+      <block type="math_number" id=":d9WBTD!igt+}q(+[ALY">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+    <next>
+      <block type="osc" id="*M^ZAUah62UZ`Oo@G+YV">
+        <value name="M">
+          <block type="math_number" id="ta77-Joax)2]acxwd!/=">
+            <field name="NUM">40</field>
+          </block>
+        </value>
+        <value name="N1">
+          <block type="math_number" id="3-bHV`:Nukf+OU#v;blb">
+            <field name="NUM">2</field>
+          </block>
+        </value>
+        <value name="N2">
+          <block type="math_number" id="Gkjc]tq|ddoZ/^B!Lu@`">
+            <field name="NUM">2</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_whileUntil" id="9pVBtsm3y,iFU+,ngG2{">
+            <field name="MODE">WHILE</field>
+            <value name="BOOL">
+              <block type="logic_boolean" id="fFav:K#-wt]BY`n?c8#E">
+                <field name="BOOL">TRUE</field>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="variables_set" id="30D^uyoaPKP!64DG=r#`">
+                <field name="VAR">i</field>
+                <value name="VALUE">
+                  <block type="adcb" id="=loFsxiAnvc1`w-F(:vH">
+                    <value name="ADCchannel">
+                      <block type="math_number" id="wx/sCb^hTF2esSDT}`kM">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="delay" id="NOg*%n_JbJWUyXf=C=}{">
+                    <value name="Time">
+                      <block type="math_number" id="jl,gJ?uPJz9-n/i@k+2G">
+                        <field name="NUM">10</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="controls_if" id="c3giEI6/Nrh9W,+P6OhU">
+                        <mutation else="1"></mutation>
+                        <value name="IF0">
+                          <block type="logic_compare" id="%QTozJnN;)n04y0,0mZ.">
+                            <field name="OP">GT</field>
+                            <value name="A">
+                              <block type="variables_get" id="Kk=)DS}H_X-)0eA,rg%!">
+                                <field name="VAR">i</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="4K9]5W;APyM!(.Y(=~k0">
+                                <field name="NUM">600</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="salidaalto" id="%Hzb^WAg5nt7pz.Mc;(1">
+                            <field name="Pin">0</field>
+                          </block>
+                        </statement>
+                        <statement name="ELSE">
+                          <block type="salidabajo" id="-Z99VDP,OkOc5}~KxF{|">
+                            <field name="Pin">0</field>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

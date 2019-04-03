@@ -1,0 +1,45 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="osc" id="*M^ZAUah62UZ`Oo@G+YV" x="170" y="156">
+    <value name="M">
+      <block type="math_number" id="ta77-Joax)2]acxwd!/=">
+        <field name="NUM">40</field>
+      </block>
+    </value>
+    <value name="N1">
+      <block type="math_number" id="3-bHV`:Nukf+OU#v;blb">
+        <field name="NUM">2</field>
+      </block>
+    </value>
+    <value name="N2">
+      <block type="math_number" id="Gkjc]tq|ddoZ/^B!Lu@`">
+        <field name="NUM">2</field>
+      </block>
+    </value>
+    <next>
+      <block type="controls_whileUntil" id="9pVBtsm3y,iFU+,ngG2{">
+        <field name="MODE">WHILE</field>
+        <value name="BOOL">
+          <block type="logic_boolean" id="fFav:K#-wt]BY`n?c8#E">
+            <field name="BOOL">TRUE</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="pwmotuputb" id="sbh`38p:accHGR9~mKQR">
+            <field name="Prescale">8</field>
+            <field name="PWM">1</field>
+            <value name="Dutty">
+              <block type="math_number" id="s4pmP(BOO[=WOqDGB:u?">
+                <field name="NUM">400</field>
+              </block>
+            </value>
+            <value name="Freq">
+              <block type="math_number" id="SPNG5xc#nRL}:w]MHl5X">
+                <field name="NUM">50000</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
