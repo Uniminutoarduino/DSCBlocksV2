@@ -87,7 +87,7 @@ Some examples can be found in the folder (Examples), for example:
 3. ReadPin
 4. ADC
 
-The examples are in .xml file. Open the application and load them with the button (upload).
+Each example is in a .xml file (Blockly Format). Open the application and load them with the button (upload).
 
 
 ## Learning Materials
