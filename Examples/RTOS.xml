@@ -1,0 +1,218 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="osc" id="*M^ZAUah62UZ`Oo@G+YV" x="-310" y="-110">
+    <value name="M">
+      <block type="math_number" id="ta77-Joax)2]acxwd!/=">
+        <field name="NUM">40</field>
+      </block>
+    </value>
+    <value name="N1">
+      <block type="math_number" id="3-bHV`:Nukf+OU#v;blb">
+        <field name="NUM">2</field>
+      </block>
+    </value>
+    <value name="N2">
+      <block type="math_number" id="Gkjc]tq|ddoZ/^B!Lu@`">
+        <field name="NUM">2</field>
+      </block>
+    </value>
+    <next>
+      <block type="os_init" id="duLxt{T39hqpRyoB9Y^G">
+        <next>
+          <block type="ostaskcreate" id="mGM%~zCgn~3(AtvXj]qZ">
+            <value name="Prior">
+              <block type="math_number" id="EF]N,MF+7`zeFApv}HZg">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="Nombre">
+              <block type="text" id="A;wpLb:6l:1aR%*R@eIH">
+                <field name="TEXT">TurnOn</field>
+              </block>
+            </value>
+            <statement name="Task">
+              <block type="controls_whileUntil" id="9pVBtsm3y,iFU+,ngG2{">
+                <field name="MODE">WHILE</field>
+                <value name="BOOL">
+                  <block type="logic_boolean" id="fFav:K#-wt]BY`n?c8#E">
+                    <field name="BOOL">TRUE</field>
+                  </block>
+                </value>
+                <statement name="DO">
+                  <block type="controls_if" id="E)C2-AoAa=RCv_2]DT5w">
+                    <value name="IF0">
+                      <block type="logic_compare" id="+TrW0Pjms2W)NBdPAsBk">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="leerpuerto" id="I=k=NB.f-68n1a#_,l,9">
+                            <field name="Pin">1</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="SN@mBA07kcrUU1Tr,M9+">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="salidaalto" id="DMY8Z%a;[PgG]6T*`z=%">
+                        <field name="Pin">0</field>
+                        <next>
+                          <block type="uarttext" id="sxrNJXCSy{sC6QCyWgWV">
+                            <value name="Text">
+                              <block type="text" id="lj3aefyum1SIU#@5k7M(">
+                                <field name="TEXT">Motor On</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="os_yield" id="]9rmkAz?iQaBI?5|uKKv"></block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </statement>
+            <next>
+              <block type="ostaskcreate" id="pJwGWv/@mMlPUt@N;}Sy">
+                <value name="Prior">
+                  <block type="math_number" id="~v/eZLS]kr^7|p*1%a4w">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="Nombre">
+                  <block type="text" id="RD#7P,JX_A7zr;0TaySj">
+                    <field name="TEXT">TurnOff</field>
+                  </block>
+                </value>
+                <statement name="Task">
+                  <block type="controls_whileUntil" id=")Cq.,vVD=+^Z3;b`|/Zi">
+                    <field name="MODE">WHILE</field>
+                    <value name="BOOL">
+                      <block type="logic_boolean" id="(tx}(r1a)H]J}JQ67T[*">
+                        <field name="BOOL">TRUE</field>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="controls_if" id="^rB+v{Wz8GQI?akG1o:^">
+                        <value name="IF0">
+                          <block type="logic_compare" id="{Wh=TCt~LETDF*p}^2?q">
+                            <field name="OP">EQ</field>
+                            <value name="A">
+                              <block type="leerpuerto" id="m:x?a{.3AED6fWRi=9qI">
+                                <field name="Pin">2</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="/HKuBS8z!vKz2l/9kb+2">
+                                <field name="NUM">0</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="salidabajo" id="Oh.xeYIo~N?]ZQsGiwM`">
+                            <field name="Pin">0</field>
+                            <next>
+                              <block type="uarttext" id="*?r:D1@qQv{W!AAcF@Av">
+                                <value name="Text">
+                                  <block type="text" id="WdSA+~W6Yx*-NU//N2MC">
+                                    <field name="TEXT">Motor Off</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="os_yield" id="Ppa]7Xqj6%%Upa/cpo*3"></block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </statement>
+                <next>
+                  <block type="ostaskcreate" id="^X_N:/d=*uAxTX?A6VkD">
+                    <value name="Prior">
+                      <block type="math_number" id="}8pP!%Za%(H{7Ek2CK%b">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="Nombre">
+                      <block type="text" id="@q5FU?/6e8GNdK[;0[b8">
+                        <field name="TEXT">LED</field>
+                      </block>
+                    </value>
+                    <statement name="Task">
+                      <block type="controls_whileUntil" id="O^yKbc-0r,|=8DMn9(0Z">
+                        <field name="MODE">WHILE</field>
+                        <value name="BOOL">
+                          <block type="logic_boolean" id="HM)4?J+%TR~C^mbQw_eQ">
+                            <field name="BOOL">TRUE</field>
+                          </block>
+                        </value>
+                        <statement name="DO">
+                          <block type="salidaled_alto_bajo" id="xXs7@%+dsz6fp}E6/vK`">
+                            <field name="Leds">LED1</field>
+                            <field name="Estado">1</field>
+                            <next>
+                              <block type="os_delay" id="/wcULrQrDhNHb(~%W@QA">
+                                <value name="Tick">
+                                  <block type="math_number" id="i)MMlB-~ejEK};mUIOK^">
+                                    <field name="NUM">1000</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="salidaled_alto_bajo" id="Jl,?x@JV5#2FJeML,zET">
+                                    <field name="Leds">LED1</field>
+                                    <field name="Estado">0</field>
+                                    <next>
+                                      <block type="os_delay" id="qed~0:cN`sZ!R,0.))[d">
+                                        <value name="Tick">
+                                          <block type="math_number" id="0@Oc`6Dsdc;0~Om?T;g{">
+                                            <field name="NUM">1000</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="os_yield" id="6:q%d,Wk!n`b{_x!7x|}"></block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="timerinterrupt" id=")r:KSp9hId=/32(mRz|3">
+                        <field name="timer">1</field>
+                        <field name="preescale">1</field>
+                        <field name="priority">1</field>
+                        <value name="timeinterrupt">
+                          <block type="math_number" id="V%^8d(,4,A6r90/utGgu">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                        <statement name="bucle">
+                          <block type="os_timer" id="D9;kYi*VwhuEFxt3V`zD"></block>
+                        </statement>
+                        <next>
+                          <block type="os_run" id="REUcM(}C+joCjWS{TT*l"></block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
