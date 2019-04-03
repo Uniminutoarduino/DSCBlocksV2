@@ -78,7 +78,7 @@ Any change in the code (generator or blocks) must be reconfigurated in Blockly. 
 Don't forget in order to compile Blockly, the closure library folder, see the following link: https://developers.google.com/blockly/guides/modify/web/closure
 
 
-##Examples
+## Examples
 
 Some examples can be found in the folder (Examples), for example:
 
